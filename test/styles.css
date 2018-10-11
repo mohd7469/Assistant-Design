@@ -1,0 +1,385 @@
+body {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.assistant {
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    z-index: 1;
+}
+
+.toolbox {
+    position: absolute;
+    top: 20px;
+    right: 36px;
+    background-color: #4285f4;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 3;
+}
+.toolbox > .material-icons {
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: calc(50% - 0.5em);
+    margin-top: calc(50% - 0.5em);
+    cursor: pointer;
+    z-index: 4;
+}
+
+.input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.keyboard-input {
+    display: none;
+    border-top: solid 1px #bfbfbf;
+    overflow: hidden;
+}
+.keyboard-input > .input-voice, .keyboard-input > .input-send {
+    position: absolute;
+    right: 50px;
+    margin-top: 11px;
+    font-size: 36px;
+    color: #4184f3;
+    cursor: pointer;
+}
+.keyboard-input > .input-text {
+    position: absolute;
+    top: calc(50% - 0.5em);
+    border: none;
+    left: 50px;
+    font-size: 18px;
+    width: calc(100% - 172px);
+    caret-color: #4184f3;
+}
+.keyboard-input > .input-text:focus {
+    border: none;
+    outline: 0;
+}
+.keyboard-input > .input-text::placeholder {
+    opacity: 0.6;
+}
+
+.voice-input > .input-mic {
+    position: absolute;
+    margin-left: calc(50% - 0.5em);
+    margin-top: 5px;
+    font-size: 48px;
+    color: #4184f3;
+    cursor: pointer;
+}
+.voice-input > .input-pills {
+    position: absolute;
+    margin-left: calc(50% - 0.5em);
+    margin-top: 24px;
+}
+.voice-input > .input-pills > .pill {
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 0;
+}
+.voice-input > .input-pills > .blue {
+    background: #4285f4;
+    left: -30px;
+}
+.voice-input > .input-pills > .red {
+    background: #ea4335;
+    left: -10px;
+}
+.voice-input > .input-pills > .green {
+    background: #34a853;
+    left: 30px;
+}
+.voice-input > .input-pills > .yellow {
+    background: #fbbc05;
+    left: 10px;
+}
+.voice-input > .input-keyboard {
+    cursor: pointer;
+    position: absolute;
+    color: #d6d6d6;
+    margin-top: 16px;
+    margin-left: 20px;
+    font-size: 32px;
+}
+
+.chat {
+    padding-top: 32px;
+    padding-left: 20px;
+    position: absolute;
+    height: calc(100% - 60px - 32px);
+    /* border-bottom: solid 1px lime;  For debug */
+    width: calc(100% - 20px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.group-bottom {
+    width: 100%;
+    /*
+    position: absolute;
+    bottom: 0;
+    */
+}
+
+.chat-message {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.chat-message.from-user {
+    text-align: right;
+    right: 0;
+}
+.chat-message > .content {
+    line-height: 22px;
+    display: inline-block;
+    text-align: left;
+    margin-right: 20px;
+    width: auto;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 1.5em;
+    max-width: 60%;
+    border: solid 2px #eaecee;
+}
+.chat-message.from-assistant {
+    max-width: 100%;
+}
+.chat-message.from-assistant > .content {
+    right: 0;
+    margin-left: 55px;
+}
+.chat-message.from-user > .content {
+    background-color: #eaecee;
+    display: inline-block;
+}
+.chat-message > .molecule {
+    position: absolute;
+    margin-top: -12px;
+    width: 42px;
+}
+.chat-message > .molecule.fade {
+    opacity: 0.7;
+}
+.chat-message > .css-molecule.fade {
+    opacity: 0.7;
+}
+.chat-message > .molecule.bounce {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+@-webkit-keyframes bounce {
+    0%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-5px);
+    }
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+@keyframes bounce-blue {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    25%, 75% {
+        transform: translateY(-1.5px) scale(1.05);
+    }
+    50% {
+        transform: translateY(-3px) scale(1);
+    }
+}
+@keyframes bounce-red {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+@keyframes bounce-green {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+@keyframes bounce-yellow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+.css-molecule {
+    position: absolute;
+    margin-top: -12px;
+    width: 42px;
+}
+.css-molecule.bounce > .pill {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.pill {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+.pill.blue {
+    background: #4285f4;
+    width: 26px;
+    height: 26px;
+    left: 0px;
+    top: 1px;
+}
+.pill.red {
+    background: #ea4335;
+    width: 10px;
+    height: 10px;
+    left: 27px;
+    top: 16px;
+}
+.pill.green {
+    background: #34a853;
+    width: 5px;
+    height: 5px;
+    left: 37px;
+    top: 12px;
+}
+.pill.yellow {
+    background: #fbbc05;
+    width: 12px;
+    height: 12px;
+    left: 26px;
+    top: 29px;
+}
+
+.css-molecule.bounce > .pill.blue {
+    -webkit-animation-name: bounce-blue;
+    animation-name: bounce-blue;
+}
+.css-molecule.bounce > .pill.red {
+    -webkit-animation-name: bounce-red;
+    animation-name: bounce-red;
+}
+.css-molecule.bounce > .pill.green {
+    -webkit-animation-name: bounce-green;
+    animation-name: bounce-green;
+}
+.css-molecule.bounce > .pill.yellow {
+    -webkit-animation-name: bounce-yellow;
+    animation-name: bounce-yellow;
+}
+
+.loading-dot {
+    display: inline;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background: #fbbc05;
+}
+
+.chat-message.loading-assistant {
+    max-width: 60%;
+}
+.chat-message.loading-assistant > .content {
+    right: 0;
+    margin-left: 55px;
+}
+.chat-message.loading-assistant > .content > .text > .material-icons {
+    color: #eee;
+    font-size: 12px;
+    padding-right: 10px;
+}
+.chat-message.loading-assistant > .content > .text > .material-icons.last {
+    padding-right: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+       supported by Chrome and Opera */
+}
+
+.wave {
+    /*position: relative;*/
+    /*margin-top: 50vh;*/
+    text-align: center;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+.wave .dot {
+    animation: wave 1.5s linear infinite;
+}
+.wave .dot:nth-child(2) {
+    animation-delay: -1.3s;
+}
+.wave .dot:nth-child(3) {
+    animation-delay: -1.1s;
+}
+.wave .dot:nth-child(4) {
+    animation-delay: -0.9s;
+}
+
+@keyframes wave {
+    0%, 60%, 100% {
+        transform: initial;
+    }
+    30% {
+        transform: translateY(-15px);
+    }
+}

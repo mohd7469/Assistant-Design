@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+<body>
+
+<div class="assistant">
+    <div class="toolbox noselect">
+        <i class="material-icons">explore</i>
+    </div>
+    <div class="chat">
+        <div class="group-bottom" id="chat-box">
+            <div class="chat-message from-assistant base-message">
+                <div class="css-molecule">
+                    <div class="pill blue"></div>
+                    <div class="pill red"></div>
+                    <div class="pill green"></div>
+                    <div class="pill yellow"></div>
+                </div>
+                <div class="content">
+                    <span class="text">
+                        This is a base application message.
+                    </span>
+                </div>
+            </div>
+            <div class="chat-message from-assistant">
+                <div class="css-molecule">
+                    <div class="pill blue"></div>
+                    <div class="pill red"></div>
+                    <div class="pill green"></div>
+                    <div class="pill yellow"></div>
+                </div>
+                <div class="content">
+                    <span class="text">
+                        This is a very message. This is a very message. This is a very message.
+                        This is a very message. This is a very message. This is a very message.
+                        This is a very message. This is a very message. This is a very message.
+                        This is a very message.
+                    </span>
+                </div>
+            </div>
+            <div class="chat-message from-assistant">
+                <div class="css-molecule">
+                    <div class="pill blue"></div>
+                    <div class="pill red"></div>
+                    <div class="pill green"></div>
+                    <div class="pill yellow"></div>
+                </div>
+                <div class="content">
+                    <span class="text">
+                        Hi, how can I help?
+                    </span>
+                </div>
+            </div>
+            <div class="chat-message from-user">
+                <div class="content">
+                    <span class="text">
+                        What's the weather like in Austin, TX?
+                    </span>
+                </div>
+            </div>
+            <div class="chat-message from-user">
+                <div class="content">
+                    <span class="text">
+                        This is a very message. This is a very message. This is a very message.
+                        This is a very message. This is a very message. This is a very message.
+                        This is a very message. This is a very message. This is a very message.
+                        This is a very message.
+                    </span>
+                </div>
+            </div>
+            <div class="chat-message loading-assistant noselect" msg-id="${this.id}">
+                <div class="css-molecule molecule fade bounce">
+                    <div class="pill blue"></div>
+                    <div class="pill red"></div>
+                    <div class="pill green"></div>
+                    <div class="pill yellow"></div>
+                </div>
+                <div class="content">
+                    <span class="text wave">
+                        <i class="material-icons dot">brightness_1</i>
+                        <i class="material-icons dot">brightness_1</i>
+                        <i class="material-icons dot last">brightness_1</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input">
+        <div class="keyboard-input">
+            <input class="input-text" placeholder="Type a Message"/>
+            <i class="input-voice material-icons noselect">mic</i>
+            <i class="input-send material-icons noselect" style="display: none">send</i>
+        </div>
+        <div class="voice-input noselect">
+            <i class="input-keyboard material-icons">keyboard</i>
+            <i class="input-mic material-icons" style="display: none;">mic</i>
+
+            <div class="input-pills wave">
+                <div class="pill dot blue" style="height: 10px; top: -0px"></div>
+                <div class="pill dot red" style="height: 20px; top: -5px"></div>
+                <div class="pill dot yellow" style="height: 10px; top: -0px"></div>
+                <div class="pill dot green" style="height: 10px; top: -0px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
